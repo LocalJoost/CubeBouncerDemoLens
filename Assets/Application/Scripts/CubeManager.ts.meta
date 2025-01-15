@@ -1,0 +1,38 @@
+- !<AssetImportMetadata/6ba8e6f2-dff9-40dd-a10f-31d22a0f1295>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 70fca25d-5c42-435e-97fb-e62f771c3c17
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 70fca25d-5c42-435e-97fb-e62f771c3c17
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 32854bec-7670-4ae7-8ebc-f11deb86b48d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/74558554-7cf1-4b31-aa61-67db32fb3aec>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/32854bec-7670-4ae7-8ebc-f11deb86b48d>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    cubePrefab: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - cubePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Asset.ObjectPrefab cubePrefab
