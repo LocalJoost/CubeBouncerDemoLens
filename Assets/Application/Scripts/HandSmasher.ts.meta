@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/e8e79750-bf79-4677-a886-83ce6ed39ba2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 44f9a4e9-c031-4fb8-9593-8b381721832b
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 44f9a4e9-c031-4fb8-9593-8b381721832b
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 9f8e708e-b354-42ca-999b-c5d3f73be8cd
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/2b301454-bbac-4d15-963d-a6b28bde1bd1>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/9f8e708e-b354-42ca-999b-c5d3f73be8cd>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    forceMultiplier: false
+    projectionDistanceMultiplier: false
+    smashAreaSize: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - forceMultiplier: !<float> 100.000000
+      smashAreaSize: !<float> 2.000000
+      projectionDistanceMultiplier: 1.100000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input float forceMultiplier = 100
+    - // @input float smashAreaSize = 10
+    - // @input float projectionDistanceMultiplier = 2

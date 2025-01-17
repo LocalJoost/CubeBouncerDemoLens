@@ -1,0 +1,89 @@
+- !<AssetImportMetadata/464dd172-6162-4e67-80e0-54ddb343ba6a>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 9993ea2f-3d44-4a83-8474-5706c4991f4a
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 9993ea2f-3d44-4a83-8474-5706c4991f4a
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 7eb055ab-7e2b-44d2-876c-b98a805e85f7
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/42cd8b93-bd87-4a2b-8ee4-caaa2f51e592>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefab/062d6463-cdf7-4348-90b7-5df344822838>
+  PackagePath: ""
+  objects:
+    - !<own> da0aea4e-261d-4409-88ec-e709c1052b36
+  LazyLoading: false
+  RetainAssets: true
+- !<ObjectPrefabAssetData/7eb055ab-7e2b-44d2-876c-b98a805e85f7>
+  SourceRemaps:
+    - 051c8592-9b73-4e6d-b6af-284c84c65903: da0aea4e-261d-4409-88ec-e709c1052b36
+    - 23a09da1-8b5a-4dff-a560-91d60aee5720: b4733c31-f6f9-4023-b0cd-5bc46ef65da2
+    - 9993ea2f-3d44-4a83-8474-5706c4991f4a: 062d6463-cdf7-4348-90b7-5df344822838
+    - f7e2ad50-1407-450e-9415-16f6e3b3c856: 9ea2b9e0-cf02-47d0-89ff-244521763ab9
+  SourceState: !<own> 062d6463-cdf7-4348-90b7-5df344822838
+- !<RenderMeshVisual/9ea2b9e0-cf02-47d0-89ff-244521763ab9>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9a9698ae-1aac-4eb9-a228-586914b1a6cb
+  Mesh: !<reference> b7a8f0f6-5e10-4cf7-9c3b-f374390186e4
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<BodyComponent/b4733c31-f6f9-4023-b0cd-5bc46ef65da2>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Mesh>
+    Mesh: !<reference> b7a8f0f6-5e10-4cf7-9c3b-f374390186e4
+    Convex: false
+    Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: false
+  BodySetting: Density
+  BodySettingValue: 1.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
+- !<SceneObject/da0aea4e-261d-4409-88ec-e709c1052b36>
+  PrefabRemaps:
+    []
+  Name: Occluded Collider World Mesh
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 9ea2b9e0-cf02-47d0-89ff-244521763ab9
+    - !<own> b4733c31-f6f9-4023-b0cd-5bc46ef65da2

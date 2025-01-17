@@ -5,6 +5,7 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> ff6c151e-214e-4216-8d76-8d4244e2a6e8
     - !<own> c0b51cd0-4216-43bb-9be9-08595de660d6
+    - !<own> a48f18f1-125c-409d-a7e6-ba5797f2e953
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -340,6 +341,26 @@
     []
   Components:
     - !<own> 22e40d6c-4405-4a2f-9eda-9f5e0d425a75
+- !<RenderMeshVisual/7efed115-7437-40e9-894c-57dc8005f823>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9a9698ae-1aac-4eb9-a228-586914b1a6cb
+  Mesh: !<reference> b7a8f0f6-5e10-4cf7-9c3b-f374390186e4
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<SceneObject/92490a16-2530-449b-8ee9-f65ff2095dd2>
   PrefabRemaps:
     []
@@ -355,10 +376,28 @@
     []
   Components:
     - !<own> 58d2a4c0-8eba-4ef1-b77e-c7f7d1192d79
-- !<SceneObject/a42c84d8-a18e-4fd6-a06e-d34908ac6237>
+- !<ScriptComponent/9ed07820-2a90-4adf-a9e4-7304bde4b888>
   PrefabRemaps:
     []
   Name: CubeManager
+  Enabled: true
+  ScriptAsset: !<reference> 70fca25d-5c42-435e-97fb-e62f771c3c17
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cubePrefab: !<reference.ObjectPrefab> ddfe30f4-cc8e-44de-b75a-08dd146970da
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/a48f18f1-125c-409d-a7e6-ba5797f2e953>
+  PrefabRemaps:
+    - 7efed115-7437-40e9-894c-57dc8005f823: f7e2ad50-1407-450e-9415-16f6e3b3c856
+    - a48f18f1-125c-409d-a7e6-ba5797f2e953: 051c8592-9b73-4e6d-b6af-284c84c65903
+    - b17bb027-f78c-49d3-8d77-dd9fcc9a8286: 23a09da1-8b5a-4dff-a560-91d60aee5720
+  Name: Occluded Collider World Mesh
   Enabled: true
   Layers: 1
   LocalTransform:
@@ -369,7 +408,32 @@
   Children:
     []
   Components:
-    - !<own> daa263e1-1915-4cff-b6b3-e3adf4d12de7
+    - !<own> 7efed115-7437-40e9-894c-57dc8005f823
+    - !<own> b17bb027-f78c-49d3-8d77-dd9fcc9a8286
+- !<BodyComponent/b17bb027-f78c-49d3-8d77-dd9fcc9a8286>
+  PrefabRemaps:
+    []
+  Name: Physics Body
+  Enabled: true
+  Shape: !<Mesh>
+    Mesh: !<reference> b7a8f0f6-5e10-4cf7-9c3b-f374390186e4
+    Convex: false
+    Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+  Dynamic: false
+  BodySetting: Density
+  BodySettingValue: 1.000000
+  Damping: 0.000000
+  AngularDamping: 0.000000
 - !<SceneObject/b27cfdfa-9f62-4102-83e8-b9bedf8c2910>
   PrefabRemaps:
     []
@@ -385,6 +449,26 @@
     []
   Components:
     - !<own> 08614d83-f067-4740-a346-a0b10d1ffd62
+- !<ScriptComponent/b744881e-5bd3-4751-98d1-5316a6eb7516>
+  PrefabRemaps:
+    []
+  Name: HandSmasher
+  Enabled: true
+  ScriptAsset: !<reference> 44f9a4e9-c031-4fb8-9593-8b381721832b
+  ScriptInputsDefault:
+    forceMultiplier: true
+    smashAreaSize: true
+    projectionDistanceMultiplier: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      forceMultiplier: !<float> 100.000000
+      smashAreaSize: !<float> 2.000000
+      projectionDistanceMultiplier: 1.100000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/c0b51cd0-4216-43bb-9be9-08595de660d6>
   PrefabRemaps:
     []
@@ -397,9 +481,10 @@
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> a42c84d8-a18e-4fd6-a06e-d34908ac6237
-  Components:
     []
+  Components:
+    - !<own> 9ed07820-2a90-4adf-a9e4-7304bde4b888
+    - !<own> b744881e-5bd3-4751-98d1-5316a6eb7516
 - !<ScriptComponent/d8ffb52f-2569-42b3-a616-c75eb7fe7e36>
   PrefabRemaps:
     []
@@ -413,22 +498,6 @@
   ScriptInputs:
     "":
       {}
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/daa263e1-1915-4cff-b6b3-e3adf4d12de7>
-  PrefabRemaps:
-    []
-  Name: CubeManager
-  Enabled: true
-  ScriptAsset: !<reference> 70fca25d-5c42-435e-97fb-e62f771c3c17
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      cubePrefab: !<reference.ObjectPrefab> ddfe30f4-cc8e-44de-b75a-08dd146970da
   ScriptTypes:
     "":
       {}
