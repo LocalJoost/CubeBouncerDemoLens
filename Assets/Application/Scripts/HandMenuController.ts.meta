@@ -1,0 +1,47 @@
+- !<AssetImportMetadata/9996d8f4-1330-47e8-9ee6-2389f46e3bbe>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 5bae9ae4-7517-4d94-983c-7e073437b650
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 5bae9ae4-7517-4d94-983c-7e073437b650
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 7b9e9c6a-8904-40bd-ab18-e0899264c9f7
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/6f7b8d5d-1528-45cf-a9b1-8a9ef2f5c1b7>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/7b9e9c6a-8904-40bd-ab18-e0899264c9f7>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    createNewGridButton: false
+    cubeManager: false
+    dropAllButton: false
+    revertAllButton: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - createNewGridButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      dropAllButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      revertAllButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cubeManager: !<MappingBased.CubeManager> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject createNewGridButton
+    - // @input SceneObject dropAllButton
+    - // @input SceneObject revertAllButton
+    - // @input CubeManager cubeManager

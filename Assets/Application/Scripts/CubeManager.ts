@@ -49,6 +49,18 @@ export class CubeManager extends BaseScriptComponent {
         }
     }
 
+    public dropAll() : void {
+        for (const cube of this.cubes) {
+            cube.drop();
+        }
+    }
+
+    public revertAll() : void {
+        for (const cube of this.cubes) {
+            cube.revert();
+        }
+    }
+
     private createCube(id: number, position: vec3, rotation: quat) {
         const clone = this.cubePrefab.instantiate(this.getSceneObject());
         var cubeController = clone.getComponent(CubeController.getTypeName()) as CubeController;
