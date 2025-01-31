@@ -27,12 +27,18 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     cubePrefab: false
+    readySound: false
+    revertAllSound: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
     - cubePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      readySound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      revertAllSound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Asset.ObjectPrefab cubePrefab
+    - // @input Component.AudioComponent readySound
+    - // @input Component.AudioComponent revertAllSound

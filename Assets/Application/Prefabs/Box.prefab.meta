@@ -14,6 +14,21 @@
   ImporterSettings: !<AssetImporterSettings/57ceb1db-931b-43fc-937d-60b9f1e2a2af>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/17cde45e-efd3-498b-bad9-f5ed6cf69179>
+  PrefabRemaps:
+    []
+  Name: BounceCube
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> df7006c6-6dac-4223-979b-f75d04b5e2a5
 - !<RenderMeshVisual/237673fd-766b-4867-be28-3d6283c3279d>
   PrefabRemaps:
     []
@@ -43,7 +58,11 @@
 - !<ObjectPrefabAssetData/72a0ec1f-b9af-4041-a614-a68c80916cc3>
   SourceRemaps:
     - 07fe3354-6551-452d-b881-48f3077e5fe3: 237673fd-766b-4867-be28-3d6283c3279d
+    - 47ab78a5-c0f9-4e3e-a4eb-f461b83da59b: 17cde45e-efd3-498b-bad9-f5ed6cf69179
+    - 636b4181-1ffb-4025-a94d-80f54cd08cc9: b1ca6a86-19ea-4d6d-8618-85ab15dd547b
+    - 74915899-5b15-4fc8-af33-1db6c2d5a7f5: d08fe7a1-5682-40c7-be08-e87b260ebdc7
     - 7681be3b-def3-4e06-89af-d93bda989ce0: a3e6a9aa-a691-4f98-aead-222531662484
+    - 861c45b1-1d5d-48d5-bcc5-dc4f645e3118: df7006c6-6dac-4223-979b-f75d04b5e2a5
     - c8e2b6b7-0ae9-44ea-90f0-75c6d619a54a: a1199a67-88a6-45ee-b206-492bde23e5ce
     - cfaffac6-a4f4-4ee7-883f-aab7423e9483: efcd7594-7774-402c-9203-e481f6f19978
     - ddfe30f4-cc8e-44de-b75a-08dd146970da: 2fc9f1e6-0cc8-4605-a7ad-275ece3e09f3
@@ -83,11 +102,61 @@
     scale: {x: 10.000000, y: 10.000000, z: 10.000000}
     hasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 17cde45e-efd3-498b-bad9-f5ed6cf69179
+    - !<own> b1ca6a86-19ea-4d6d-8618-85ab15dd547b
   Components:
     - !<own> 237673fd-766b-4867-be28-3d6283c3279d
     - !<own> a1199a67-88a6-45ee-b206-492bde23e5ce
     - !<own> efcd7594-7774-402c-9203-e481f6f19978
+- !<SceneObject/b1ca6a86-19ea-4d6d-8618-85ab15dd547b>
+  PrefabRemaps:
+    []
+  Name: BounceWall
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d08fe7a1-5682-40c7-be08-e87b260ebdc7
+- !<AudioComponent/d08fe7a1-5682-40c7-be08-e87b260ebdc7>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> e52b49bd-04fc-4934-bea6-2444374f869e
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
+- !<AudioComponent/df7006c6-6dac-4223-979b-f75d04b5e2a5>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 4c7fbe6d-97f1-495d-8cee-0e3377872919
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<ScriptComponent/efcd7594-7774-402c-9203-e481f6f19978>
   PrefabRemaps:
     []
@@ -101,6 +170,8 @@
   ScriptInputs:
     "":
       bodyComponent: !<reference.BodyComponent> a1199a67-88a6-45ee-b206-492bde23e5ce
+      bounceCubeSound: !<reference.AudioComponent> df7006c6-6dac-4223-979b-f75d04b5e2a5
+      bounceOtherSound: !<reference.AudioComponent> d08fe7a1-5682-40c7-be08-e87b260ebdc7
   ScriptTypes:
     "":
       {}

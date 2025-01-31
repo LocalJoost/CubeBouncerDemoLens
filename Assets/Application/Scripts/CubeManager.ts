@@ -6,6 +6,8 @@ import { VectorUtils } from "./VectorUtils";
 export class CubeManager extends BaseScriptComponent {
 
     @input private cubePrefab: ObjectPrefab;
+    @input private readySound: AudioComponent
+    @input private revertAllSound: AudioComponent
 
     private camera = WorldCameraFinderProvider.getInstance();
     private readonly SIZE = 20;
@@ -47,6 +49,7 @@ export class CubeManager extends BaseScriptComponent {
                 }
             }
         }
+        this.readySound.play(1);
     }
 
     public dropAll() : void {
@@ -59,6 +62,7 @@ export class CubeManager extends BaseScriptComponent {
         for (const cube of this.cubes) {
             cube.revert();
         }
+        this.revertAllSound.play(1);
     }
 
     private createCube(id: number, position: vec3, rotation: quat) {

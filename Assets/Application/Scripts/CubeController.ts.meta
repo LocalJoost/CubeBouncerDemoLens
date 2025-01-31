@@ -27,12 +27,18 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     bodyComponent: false
+    bounceCubeSound: false
+    bounceOtherSound: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
     - bodyComponent: !<reference.BodyComponent> 00000000-0000-0000-0000-000000000000
+      bounceCubeSound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      bounceOtherSound: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Component.BodyComponent bodyComponent
+    - // @input Component.AudioComponent bounceCubeSound
+    - // @input Component.AudioComponent bounceOtherSound

@@ -24,6 +24,53 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/47ab78a5-c0f9-4e3e-a4eb-f461b83da59b>
+  PrefabRemaps:
+    []
+  Name: BounceCube
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 861c45b1-1d5d-48d5-bcc5-dc4f645e3118
+- !<SceneObject/636b4181-1ffb-4025-a94d-80f54cd08cc9>
+  PrefabRemaps:
+    []
+  Name: BounceWall
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 74915899-5b15-4fc8-af33-1db6c2d5a7f5
+- !<AudioComponent/74915899-5b15-4fc8-af33-1db6c2d5a7f5>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> e52b49bd-04fc-4934-bea6-2444374f869e
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<SceneObject/7681be3b-def3-4e06-89af-d93bda989ce0>
   PrefabRemaps:
     []
@@ -36,11 +83,29 @@
     scale: {x: 10.000000, y: 10.000000, z: 10.000000}
     hasSegmentScaleCompensation: false
   Children:
-    []
+    - !<own> 47ab78a5-c0f9-4e3e-a4eb-f461b83da59b
+    - !<own> 636b4181-1ffb-4025-a94d-80f54cd08cc9
   Components:
     - !<own> 07fe3354-6551-452d-b881-48f3077e5fe3
     - !<own> c8e2b6b7-0ae9-44ea-90f0-75c6d619a54a
     - !<own> cfaffac6-a4f4-4ee7-883f-aab7423e9483
+- !<AudioComponent/861c45b1-1d5d-48d5-bcc5-dc4f645e3118>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 4c7fbe6d-97f1-495d-8cee-0e3377872919
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<BodyComponent/c8e2b6b7-0ae9-44ea-90f0-75c6d619a54a>
   PrefabRemaps:
     []
@@ -77,6 +142,8 @@
   ScriptInputs:
     "":
       bodyComponent: !<reference.BodyComponent> c8e2b6b7-0ae9-44ea-90f0-75c6d619a54a
+      bounceCubeSound: !<reference.AudioComponent> 861c45b1-1d5d-48d5-bcc5-dc4f645e3118
+      bounceOtherSound: !<reference.AudioComponent> 74915899-5b15-4fc8-af33-1db6c2d5a7f5
   ScriptTypes:
     "":
       {}

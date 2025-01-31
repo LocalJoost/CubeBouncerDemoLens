@@ -2,13 +2,19 @@
 export class CubeController extends BaseScriptComponent {
 
     @input private bodyComponent: BodyComponent
+    @input private bounceCubeSound: AudioComponent
+    @input private bounceOtherSound: AudioComponent
 
     private originalPosition: vec3;
     private originalRotation: quat;
+    private cubeId : number;
+
+
     private isInitialized: boolean = false;
 
     onAwake() {
         this.bodyComponent.enabled = false;
+        this.bodyComponent.onCollisionEnter.add(this.handleCollisionEnter.bind(this));
     }
 
     public initialize (id: number, initialPosition: vec3, 
@@ -24,6 +30,11 @@ export class CubeController extends BaseScriptComponent {
         this.enableGravity(false);
         this.bodyComponent.enabled = true;
         this.getSceneObject().name= "Cube " + id;
+        this.cubeId = id;
+    }
+
+    public getID() : number {
+        return this.cubeId;
     }
 
     public drop(): void    {
@@ -64,5 +75,17 @@ export class CubeController extends BaseScriptComponent {
                 resolve();
             });
         });
+    }
+
+    private handleCollisionEnter(eventArgs: CollisionEnterEventArgs) : void {
+        var otherCubeController = eventArgs.collision.collider.getSceneObject().
+            getComponent(CubeController.getTypeName());
+        if (otherCubeController != null) {
+            if( otherCubeController.getID() > this.cubeId ) {
+                this.bounceCubeSound.play(1)
+            }
+        } else {
+                this.bounceOtherSound.play(1)
+        }
     }
 }
