@@ -1,3 +1,5 @@
+import { AudioComponentPlayManager } from "./AudioComponentPlayManager";
+
 @component
 export class CubeController extends BaseScriptComponent {
 
@@ -8,8 +10,8 @@ export class CubeController extends BaseScriptComponent {
     private originalPosition: vec3;
     private originalRotation: quat;
     private cubeId : number;
-
-
+    private audioComponentPlayManager: AudioComponentPlayManager;
+    private lastPlayTime: number = 0;
     private isInitialized: boolean = false;
 
     onAwake() {
@@ -17,11 +19,12 @@ export class CubeController extends BaseScriptComponent {
         this.bodyComponent.onCollisionEnter.add(this.handleCollisionEnter.bind(this));
     }
 
-    public initialize (id: number, initialPosition: vec3, 
-                       initialRotation: quat) : void {
+    public initialize (id: number, initialPosition: vec3, initialRotation: quat, 
+        audioComponentPlayManager:AudioComponentPlayManager) : void {
         if (this.isInitialized) {
             return;
         }
+this.audioComponentPlayManager = audioComponentPlayManager;
         this.isInitialized = true;
         this.originalPosition = initialPosition;
         this.originalRotation = initialRotation;
@@ -78,14 +81,19 @@ export class CubeController extends BaseScriptComponent {
     }
 
     private handleCollisionEnter(eventArgs: CollisionEnterEventArgs) : void {
+        if (getTime() - this.lastPlayTime < 1) {
+            return;
+        }
+        this.lastPlayTime = getTime();
         var otherCubeController = eventArgs.collision.collider.getSceneObject().
             getComponent(CubeController.getTypeName());
         if (otherCubeController != null) {
-            if( otherCubeController.getID() > this.cubeId ) {
-                this.bounceCubeSound.play(1)
+            if(otherCubeController.cubeId < this.cubeId) {
+                this.audioComponentPlayManager.addAudioComponent(this.bounceCubeSound);
             }
-        } else {
-                this.bounceOtherSound.play(1)
+        } 
+        else {
+            this.audioComponentPlayManager.addAudioComponent(this.bounceOtherSound);
         }
     }
 }

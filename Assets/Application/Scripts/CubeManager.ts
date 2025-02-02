@@ -1,6 +1,7 @@
 import WorldCameraFinderProvider from "../../SpectaclesInteractionKit/Providers/CameraProvider/WorldCameraFinderProvider"
 import { CubeController } from "./CubeController";
 import { VectorUtils } from "./VectorUtils";
+import { AudioComponentPlayManager } from "./AudioComponentPlayManager";
 
 @component
 export class CubeManager extends BaseScriptComponent {
@@ -29,6 +30,7 @@ export class CubeManager extends BaseScriptComponent {
         for (const cube of this.cubes) {
             cube.getSceneObject().destroy();
         }
+        var audioComponentPlayManager = new AudioComponentPlayManager();
         this.cubes = [];
 
         const forward = this.camera.getTransform().forward;
@@ -45,7 +47,7 @@ export class CubeManager extends BaseScriptComponent {
                     this.createCube(id++,
                         startPostion.add(forward.mult(VectorUtils.scalar3(-z))).add(
                             right.mult(VectorUtils.scalar3(x))).add(up.mult(VectorUtils.scalar3(y))),
-                        rotation);
+                        rotation, audioComponentPlayManager);
                 }
             }
         }
@@ -65,10 +67,11 @@ export class CubeManager extends BaseScriptComponent {
         this.revertAllSound.play(1);
     }
 
-    private createCube(id: number, position: vec3, rotation: quat) {
+    private createCube(id: number, position: vec3, rotation: quat,
+                       audioComponentPlayManager) {
         const clone = this.cubePrefab.instantiate(this.getSceneObject());
         var cubeController = clone.getComponent(CubeController.getTypeName()) as CubeController;
-        cubeController.initialize(id++, position, rotation);
+        cubeController.initialize(id++, position, rotation, audioComponentPlayManager);
         this.cubes.push(cubeController);
     }
 }

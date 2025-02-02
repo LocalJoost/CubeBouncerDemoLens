@@ -64,13 +64,13 @@
   Volume: 1.000000
   EnableMixToSnap: false
   RecordVolume: 1.000000
-  EnableSpatialAudio: false
-  EnableDistanceEffect: false
+  EnableSpatialAudio: true
+  EnableDistanceEffect: true
   CurveType: Logarithm
   MinDistance: 0.000000
-  MaxDistance: 100.000000
+  MaxDistance: 1000.000000
   EnableDirectivityEffect: false
-  EnablePositionEffect: false
+  EnablePositionEffect: true
 - !<SceneObject/7681be3b-def3-4e06-89af-d93bda989ce0>
   PrefabRemaps:
     []
@@ -99,13 +99,13 @@
   Volume: 1.000000
   EnableMixToSnap: false
   RecordVolume: 1.000000
-  EnableSpatialAudio: false
-  EnableDistanceEffect: false
+  EnableSpatialAudio: true
+  EnableDistanceEffect: true
   CurveType: Logarithm
   MinDistance: 0.000000
-  MaxDistance: 100.000000
+  MaxDistance: 1000.000000
   EnableDirectivityEffect: false
-  EnablePositionEffect: false
+  EnablePositionEffect: true
 - !<BodyComponent/c8e2b6b7-0ae9-44ea-90f0-75c6d619a54a>
   PrefabRemaps:
     []
@@ -126,7 +126,7 @@
   ShowCollider: false
   Dynamic: true
   BodySetting: Density
-  BodySettingValue: 10.100000
+  BodySettingValue: 0.100000
   Damping: 0.000000
   AngularDamping: 0.000000
 - !<ScriptComponent/cfaffac6-a4f4-4ee7-883f-aab7423e9483>
